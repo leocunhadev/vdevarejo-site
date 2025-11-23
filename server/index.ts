@@ -1,33 +1,31 @@
 import express from "express";
-import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-async function startServer() {
-  const app = express();
-  const server = createServer(app);
+const app = express();
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+// Define o caminho estático
+const staticPath = process.env.NODE_ENV === "production"
+  ? path.resolve(__dirname, "../public") // Ajuste conforme a estrutura de pastas da Vercel
+  : path.resolve(__dirname, "..", "dist", "public");
 
-  app.use(express.static(staticPath));
+app.use(express.static(staticPath));
 
-  // Handle client-side routing - serve index.html for all routes
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(staticPath, "index.html"));
-  });
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(staticPath, "index.html"));
+});
 
+// MODIFICAÇÃO CRUCIAL:
+// Só roda o listen se estiver localmente.
+if (process.env.NODE_ENV !== 'production') {
   const port = process.env.PORT || 3000;
-
-  server.listen(port, () => {
+  app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
   });
 }
 
-startServer().catch(console.error);
+// Exporta o app para a Vercel executar
+export default app;
