@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { 
-  TrendingDown, 
-  Users, 
-  DollarSign, 
-  Target, 
-  BookOpen, 
-  Handshake, 
+import {
+  TrendingDown,
+  Users,
+  DollarSign,
+  Target,
+  BookOpen,
+  Handshake,
   Mic,
   Check,
   Clock,
@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main>
         {/* SEÇÃO 1: HERO */}
         <section className="relative bg-gradient-to-br from-secondary via-secondary/95 to-secondary/90 text-secondary-foreground py-20 md:py-32">
@@ -188,7 +188,7 @@ export default function Home() {
 
             <div className="text-center mt-12">
               <Link href="/fundador">
-                <Button size="lg" className="text-lg px-8 py-6 font-bold">
+                <Button size="lg" className="w-full text-lg px-8 py-6 font-bold">
                   QUERO TRANSFORMAR MEU VAREJO
                 </Button>
               </Link>
@@ -316,7 +316,7 @@ export default function Home() {
               <p className="text-lg text-center mb-8">
                 O VdeVAREJO foi desenhado para o <strong>varejista raiz</strong> que construiu um negócio com as próprias mãos, mas sente que chegou a hora de profissionalizar, crescer e garantir que o legado não morra na próxima geração.
               </p>
-              
+
               <Card className="border-2 border-primary mb-8">
                 <CardContent className="pt-6">
                   <h3 className="text-xl font-bold mb-4 text-center">Este programa é para você se:</h3>
