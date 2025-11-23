@@ -188,7 +188,7 @@ export default function Home() {
 
             <div className="text-center mt-12">
               <Link href="/fundador">
-                <Button size="lg" className="w-full text-lg px-8 py-6 font-bold">
+                <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6 font-bold">
                   QUERO TRANSFORMAR MEU VAREJO
                 </Button>
               </Link>
@@ -396,7 +396,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <Link href="/fundador">
-                    <Button size="lg" className="w-full font-bold text-lg">
+                    <Button size="lg" className="w-full sm:w-auto font-bold text-lg">
                       QUERO ESSA TRANSFORMAÇÃO
                     </Button>
                   </Link>
@@ -427,7 +427,7 @@ export default function Home() {
               Não deixe seu negócio morrer na próxima geração. Junte-se aos 500 primeiros e construa um legado de sucesso.
             </p>
             <Link href="/fundador">
-              <Button size="lg" className="text-xl px-12 py-8 font-bold">
+              <Button size="lg" className="w-full sm:w-auto text-xl px-12 py-8 font-bold">
                 QUERO ESSA TRANSFORMAÇÃO
               </Button>
             </Link>
